@@ -83,7 +83,8 @@ static NSString * const kJsPrintSource = @"(function() { return document.getElem
     chromeWindow *window = [[[self->chrome classForScriptingClass:@"window"] alloc] init];
     [self->chrome.windows addObject:window];
 
-    chromeTab *tab = [window.tabs firstObject];
+    //chromeTab *tab = [window.tabs firstObject];
+    chromeTab *tab = window.tabs.objectEnumerator.nextObject;
     tab.URL = url;
 
     [self printInfo:tab];
@@ -260,7 +261,8 @@ static NSString * const kJsPrintSource = @"(function() { return document.getElem
 
 - (chromeWindow *)activeWindow {
     // The first object seems to alway be the active window
-    return self->chrome.windows.firstObject;
+    //return self->chrome.windows.firstObject;
+    return self->chrome.windows.objectEnumerator.nextObject;
 }
 
 - (chromeWindow *)findWindow:(NSInteger)windowId {
