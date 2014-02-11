@@ -60,6 +60,14 @@ static NSString * const kJsPrintSource = @"(function() { return document.getElem
     [self printInfo:tab];
 }
 
+- (void)printAllTabInfo:(Arguments *)args {
+    for (chromeWindow *window in self->chrome.windows) {
+        for (chromeTab *tab in window.tabs) {
+            printf("%ld\t%ld\t%s\t%s\n", (long)window.id, (long)tab.id, tab.title.UTF8String, tab.URL.UTF8String);
+        }
+    }
+}
+
 - (void)printTabInfo:(Arguments *)args {
     NSInteger tabId = [args asInteger:@"id"];
     chromeTab *tab = [self findTab:tabId];

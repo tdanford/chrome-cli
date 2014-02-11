@@ -24,6 +24,7 @@ int main(int argc, const char * argv[])
     [argonaut add:@"list tabs -w <id>" target:app action:@selector(listTabsInWindow:) description:@"List tabs in specific window"];
 
     [argonaut add:@"info" target:app action:@selector(printActiveTabInfo:) description:@"Print info for active tab"];
+    [argonaut add:@"info tabs" target:app action:@selector(printAllTabInfo:) description:@"Print TSV-formatted info for all tabs"];
     [argonaut add:@"info -t <id>" target:app action:@selector(printTabInfo:) description:@"Print info for specific tab"];
 
     [argonaut add:@"open <url>" target:app action:@selector(openUrlInNewTab:) description:@"Open url in new tab"];
