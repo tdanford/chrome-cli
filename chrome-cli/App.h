@@ -15,6 +15,7 @@
 - (void)listTabs:(Arguments *)args;
 - (void)listTabsInWindow:(Arguments *)args;
 - (void)printActiveTabInfo:(Arguments *)args;
+- (void)printAllTabInfo:(Arguments *)args;
 - (void)printTabInfo:(Arguments *)args;
 - (void)openUrlInNewTab:(Arguments *)args;
 - (void)openUrlInNewWindow:(Arguments *)args;
