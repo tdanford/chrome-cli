@@ -11,7 +11,6 @@
 		2E9DCEB018A6E20A00A5339D /* Arguments.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DCEAF18A6E20A00A5339D /* Arguments.m */; };
 		2EB4622718A668F700211D5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB4622618A668F700211D5F /* Foundation.framework */; };
 		2EB4622A18A668F700211D5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB4622918A668F700211D5F /* main.m */; };
-		2EB4622E18A668F700211D5F /* chrome_cli.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2EB4622D18A668F700211D5F /* chrome_cli.1 */; };
 		2EB4623518A6690800211D5F /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB4623418A6690800211D5F /* ScriptingBridge.framework */; };
 		2EBFE41818A6822B008EC2DF /* Argonaut.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBFE41718A6822B008EC2DF /* Argonaut.m */; };
 		2EBFE41B18A68613008EC2DF /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBFE41A18A68613008EC2DF /* App.m */; };
@@ -21,10 +20,9 @@
 		2EB4622118A668F700211D5F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			dstPath = /usr/share/man/man1;
 			dstSubfolderSpec = 0;
 			files = (
-				2EB4622E18A668F700211D5F /* chrome_cli.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -257,7 +255,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "chrome-cli/chrome-cli-Prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.8;
 			};
 			name = Debug;
 		};
@@ -266,7 +266,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "chrome-cli/chrome-cli-Prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.8;
 			};
 			name = Release;
 		};

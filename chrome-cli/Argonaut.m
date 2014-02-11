@@ -31,7 +31,9 @@
     NSMutableArray *args = [NSMutableArray arrayWithArray:[[NSProcessInfo processInfo] arguments]];
 
     // Grab binary name
-    self->appName = [[args.firstObject pathComponents] lastObject];
+    self->appName = [[args.objectEnumerator.nextObject pathComponents] lastObject];
+    //self->appName = [[args.firstObject pathComponents] lastObject];
+    //self->appName = "chrome-cli";
 
     // Remove application path argument
     [args removeObjectAtIndex:0];
