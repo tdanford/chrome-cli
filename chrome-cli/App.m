@@ -105,7 +105,7 @@ static NSString * const kJsPrintSource = @"(function() { return document.getElem
     chromeWindow *window = [[[self->chrome classForScriptingClass:@"window"] alloc] initWithProperties:@{@"mode": @"incognito"}];
     [self->chrome.windows addObject:window];
     
-    chromeTab *tab = [window.tabs firstObject];
+    chromeTab *tab = window.tabs.objectEnumerator.nextObject;
     tab.URL = url;
     
     [self printInfo:tab];
